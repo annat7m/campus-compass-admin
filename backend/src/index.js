@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import buildingRoutes from "./routes/buildingRoutes.js";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api/buildings", buildingRoutes);
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URI =
